@@ -1,0 +1,20 @@
+카드게임
+<>
+JavaScript/JQuery로 제작한 카드 알파벳 짝 맞추기 게임 입니다. <br>
+랜덤카드 배치 및 카드 맞추기에 대한 기능을 구현하였습니다.
+<>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex08/puzzle.html" download>puzzle.html</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4xNFQY8J14M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex08/1.png
+<>
+../../resource/ex08/2.png
+<>
+../../resource/ex08/3.png
+<>
+../../resource/ex08/4.png
+<>
+../../resource/ex08/5.png

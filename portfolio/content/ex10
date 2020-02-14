@@ -1,0 +1,30 @@
+상권 분석 웹사이트
+<>
+'소상공인마당'의 상권정보시스템 웹사이트를 모방하여 만든 강남 외식업 상권 분석 사이트 입니다. <br>
+기본정보 보기, 평가종합, 평가지수 추이, 상세평가 지수를 나타냈습니다.
+<>
+<br>
+[기타]<br>
+개발환경: Window 10, Apache Tomcat 8.5<br>
+개발도구: Eclipse, Visual Studio Code, MySQL, STS, MyBatis<br>
+개발언어: Java, JSP, JavaScript<br>
+개발H/W: PC<br>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex10/상권분석.pptx" download>상권분석.pptx</a><br>
+<a href="../../resource/ex10/Sosang1.7.zip" download>Sosang1.7.zip</a><br>
+<br>
+[링크]<br>
+<a href="http://sds10226.cafe24.com/" download>http://sds10226.cafe24.com/</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M9QnPJw78iU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex10/1.png
+<>
+../../resource/ex10/2.png
+<>
+../../resource/ex10/3.png
+<>
+../../resource/ex10/4.png
+<>
+../../resource/ex10/5.png

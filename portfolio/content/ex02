@@ -1,0 +1,18 @@
+컴퓨터 그래픽스
+<>
+C#/OpenGL로 제작한 CG(Computer Graphics) 입니다. <br>
+2018년 '컴퓨터 그래픽스'수업에서 과제로 만들었습니다. <br>
+glut, glu를 이용해 움직이는 물체들을 생성하고 여러 각도에서 관찰할 수 있는 카메라 기능을 넣었습니다.
+<>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex02/컴퓨터그래픽스 프로젝트 보고서.hwp" download>컴퓨터그래픽스 프로젝트 보고서.hwp</a><br>
+<a href="../../resource/ex02/project.zip" download>project.zip</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DptTfYYc_BQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex02/1.png
+<>
+../../resource/ex02/2.png
+<>
+../../resource/ex02/3.png

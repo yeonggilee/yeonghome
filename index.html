@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YeoungHome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <script>
+        function scrollMove(id) {
+            $('html').animate({scrollTop : $(id).offset().top}, 400);
+        }
+        function scrollTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img id="title-logo" src="resource/index/YeoungHome-logo.png" alt="메인으로" height="100" width="300"></a>
+    </header>
+    <section>
+        <div id="back-img"></div>
+        <div id="txt">
+            <div id="title-txt">
+                <p style="font-size: 40px; text-align: left;">안녕하세요!</p>
+                <p style="font-size: 80px; text-align: center; font-weight: bolder;">프로그래밍 포트폴리오</p>
+                <p style="font-size: 40px; text-align: right;">홈페이지 입니다.</p>
+                <br>
+                <p style="font-size: 80px; text-align: center; font-weight: bolder;">
+                    <span class="glyphicon glyphicon-circle-arrow-down" onclick="scrollMove('#content-txt')" style="cursor: pointer;"></span>
+                </p>
+            </div>
+            <div id="content-txt">
+                <p data-toggle="modal" data-target="#myModal" data-backdrop="static">프로필</p>
+                <p><a href="portfolio/list(fetch).html" style="color: white;">포트폴리오</a></p>
+                <p data-toggle="modal" data-target="#myModal2" data-backdrop="static">문의하기</p>
+            </div>
+        </div>
+        <!-- Modal1 -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">프로필</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-body">
+                            <p class="profile-content"><img id="profile-img" src="resource/index/profile.jpg" alt="프로필사진" height="120" width="120"></p>
+                            <br>
+                            <p class="profile-list">성명</p>
+                            <p class="profile-content">이영기</p><br>
+                            <p class="profile-list">생년월일</p>
+                            <p class="profile-content">1996.12.16</p><br>
+                            <p class="profile-list">이메일</p>
+                            <p class="profile-content">l0g@naver.com</p><br>
+                            <p class="profile-list">최종학력</p>
+                            <p class="profile-content">한성대학교</p><br>
+                            <p class="profile-list">전공</p>
+                            <p class="profile-content">지식정보학부, 컴퓨터공학과</p><br>
+                            <p class="profile-list">자격증</p>
+                            <p class="profile-content">정보처리기사</p><br>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                    </div>
+                </div><!-- end of Modal content -->
+            </div>
+        </div><!-- end of Modal -->
+        <!-- Modal2 -->
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" onclick="location.href='index.html'">&times;</button>
+                        <h4 class="modal-title">문의하기</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="gform" method="POST" 
+                        action="https://script.google.com/macros/s/AKfycbwcKwBW0vAGhyy6Mb4a3cFg0ejr1l5GIKx8QBLr/exec">
+                            <div class="form-group">
+                                <input class="form-control" name="name" placeholder="Your Name*" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="email" placeholder="Your Email*" required>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea style="height: 200px;" type="area" class="form-control" name="message" placeholder="Message"></textarea>
+                            </div>
+                            <button class="btn btn-default button-success pure-button button-xlarge">Send</button>
+                            <br><br>
+                            <div class="thankyou_message" style="display: none;">
+                                <h7><b>전송이 완료되었습니다.</b><br></h7>
+                                <h6>일주일 안에 회신하겠습니다.</h6>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='index.html'">닫기</button>
+                    </div>
+                </div><!-- end of Modal2 content -->
+            </div>
+        </div><!-- end of Modal2 -->
+    </section>
+</body>
+</html>

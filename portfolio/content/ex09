@@ -1,0 +1,31 @@
+중고차 매매 웹사이트
+<>
+'SK 엔카' 웹사이트를 모방하여 만든 중고차 매매 사이트 입니다. <br>
+차량리스트 보기, 차량 상세보기, 구매문의 등록, 위시리스트 등로/보기/삭제를 구현하였습니다.
+<>
+<br>
+[기타]<br>
+개발환경: Window 10, Apache Tomcat 8.5<br>
+개발도구: Eclipse, Visual Studio Code, MySQL<br>
+개발언어: Java, JSP, JavaScript<br>
+개발H/W: PC<br>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex09/중고차매매(개인).pptx" download>중고차매매(개인).pptx</a><br>
+<a href="../../resource/ex09/UsedCar10.zip" download>UsedCar10.zip</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9VkNFijYJcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex09/1.png
+<>
+../../resource/ex09/2.png
+<>
+../../resource/ex09/3.png
+<>
+../../resource/ex09/4.png
+<>
+../../resource/ex09/5.png
+<>
+../../resource/ex09/6.png
+<>
+../../resource/ex09/7.png

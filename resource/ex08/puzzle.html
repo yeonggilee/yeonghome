@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        header {
+            margin: 20px auto;
+            text-align: center;
+        }
+        header > button{
+            height: 50px;
+            border-radius: 10px;
+            background-color: darkslateblue;
+        }
+        header > button > i {
+            vertical-align: middle;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 20px;
+        }
+        
+        #puzzle ul{
+            padding: 0;
+            width: 730px;
+            overflow: hidden;
+            border: 5px solid steelblue;
+            background-color: lightgrey;
+            margin: 20px auto;
+        }
+        #puzzle li{
+            width: 150px;
+            height: 200px;
+            margin: 15px;
+            float: left;
+            border: 3px dashed darkblue;
+            list-style: none;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+            font-size: 100px;
+        }
+
+        #time{
+            font-size: 100px;
+            font-weight: bold;
+            color: brown;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <button id="changeBtn"><i class="glyphicon glyphicon-heart">&nbsp;카드섞기&nbsp;</i><i class="glyphicon glyphicon-heart"></i></i></button>
+        </header>
+        <div id="time"></div>
+        <div id="puzzle">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+        let deg = 360;
+        let $cells = $('#puzzle li');
+        let selection = null;
+        let selectable = false;
+        let correct = 0;
+        let pairNum = 8;
+        let readyCount = 3;
+        let gameCount = 0;
+        let interval = null;
+
+        $('#changeBtn').on('click', function(){
+            //1. 기존 값들 지우기
+            resetGame();
+
+            //2. 회전 효과
+            deg *= -1;
+            $('li').css({transform: "rotate("+deg+"deg)", transition: "1s", backgroundColor: "lightgrey"});
+
+            //3. 알파벳 세팅
+            setAlphabetx();
+
+            //4. 게임 대기, 카운트 세기
+            readyGame();
+        });
+
+        $cells.on('click', function(){
+            if(!selectable) return;//선택 불가능할 시
+
+            let position = $(this).index();
+            $cells[position].innerText = $cells[position].alphabet;
+            
+            if(selection == null){//이전에 선택한 카드가 없을 시
+                selection = $cells[position];
+            }
+            else{//이전에 선택한 카드가 있을 시
+                if(selection == $cells[position]){//같은 카드 클릭 시
+                    return;
+                }
+                if($cells[position].alphabet == selection.alphabet){//두 카드의 값이 같을 시
+                    $(selection).css("background-color", "white");
+                    $($cells[position]).css("background-color", "white");
+                    correct++;
+
+                    if(correct == pairNum){//모두 성공 했을 시
+                        alert("축!! "+gameCount+"초 만에 성공!!");
+                        stopGame();
+                    }
+                }
+                else{//두 카드의 값이 다를 시
+                    let selected = selection;
+                    selectable = false;
+                    let timeout = setTimeout(() => {
+                        selected.innerText = "";
+                        $cells[position].innerText = "";
+                        selectable = true;
+                    }, 1000);
+                }
+                selection = null;
+            }
+        });
+
+        let readyGame = function(){
+            let count = readyCount;
+            interval = setInterval(() =>{
+                $('#time')[0].innerText = count;
+                count--;
+                if(count==-1) {
+                    clearInterval(interval);
+
+                    //5. 게임 시작, 카운트 세기
+                    startGame();
+                }
+            }, 1000);//1초에 한번 실행
+        }
+        let setAlphabetx = function(){
+            for(let i=0; i<$cells.length;) {
+                let alphabet = String.fromCharCode(i%pairNum+65);//알파벳 가져오기
+                let position = Math.floor(Math.random()*$cells.length);//랜덤 위치에
+                if(!($cells[position].alphabet)) {//자리가 비어있으면
+                    $cells[position].innerText = alphabet;//입력하고
+                    $cells[position].alphabet = alphabet;//저장
+                    i++;//다음 알파벳으로 이동
+                }
+            }
+        }
+        let resetGame = function(){
+            stopGame();
+            for(let i=0; i<$cells.length;) {
+                $cells[i].innerText = "";
+                $cells[i].alphabet = false;
+                i++;
+            }
+        }
+        let stopGame = function(){
+            clearInterval(interval);
+            gameCount = 0;
+            correct = 0;
+            selectable = false;
+        }
+        let setField = function(){
+            for(let i=0; i<$cells.length;i++) {
+                $cells[i].innerText = "";//카드 입력 지우기
+            }
+            $('#time')[0].innerText = "";//대기 카운트 지우기
+            selectable = true;//선택 가능하게 하기
+        }
+        let startGame = function(){
+            setField();
+            interval = setInterval(() => {
+                gameCount++;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

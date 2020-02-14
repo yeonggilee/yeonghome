@@ -1,0 +1,29 @@
+고객관리시스템
+<>
+Java/DB로 제작한 고객관리시스템 입니다.<br>
+고객의 정보를 관리하는 GUI를 구현하였으며<br>
+정보 추가, 수정, 삭제와 같은 기본 인적사항 관리 외에도 나이별, 성별 차트분석과 인적사항을 엑셀로 출력할 수 있습니다.
+<>
+<br>
+[기타]<br>
+개발환경: Window 8.1<br>
+개발도구: Eclipse, OracleXE<br>
+개발언어: Java<br>
+개발H/W: PC<br>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex04/고객관리시스템.pptx" download>고객관리시스템.pptx</a><br>
+<a href="../../resource/ex04/day27.mini_project.zip" download>day27.mini_project.zip</a><br>
+<a href="../../resource/ex04/CustomerManagementSystem.zip" download>CustomerManagementSystem.zip</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GvIFnEBrti4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex04/1.png
+<>
+../../resource/ex04/2.png
+<>
+../../resource/ex04/3.png
+<>
+../../resource/ex04/4.png
+<>
+../../resource/ex04/5.png

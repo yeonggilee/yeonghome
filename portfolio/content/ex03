@@ -1,0 +1,27 @@
+VR 방 탈출 게임
+<>
+C#/Unity로 제작한 VR 방 탈출 게임 입니다. <br>
+2019년 대학교 졸업프로젝트로 만들었습니다. <br>
+Oculus VR과 센서, 그리고 컨트롤러를 통해 가상공간과의 상호작용으로 생동감있는 게임을 진행할 수 있습니다.
+<>
+<br>
+[기타]<br>
+개발환경: Window 7<br>
+개발도구: Unity, Visual Studio 2017, 3dxMax, Blender, Photoshop<br>
+개발언어: C#<br>
+개발H/W: Oculus Rift, GTX 1050 ti<br>
+<br>
+[다운로드]<br>
+<a href="../../resource/ex03/최종보고서.hwp" download>최종보고서.hwp</a><br>
+<a href="../../resource/ex03/주간보고서.zip" download>주간보고서.zip</a><br>
+<br>
+[링크]<br>
+<a href="https://github.com/hsesc/Hanscape_Final" download>https://github.com/hsesc/Hanscape_Final</a><br>
+<>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jteGWNADU68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<>
+../../resource/ex03/1.png
+<>
+../../resource/ex03/2.png
+<>
+../../resource/ex03/3.png

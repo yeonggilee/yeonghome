@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YeoungHome-portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../resource/css/style.css">
+    <script>
+        function searchEnter(){
+            if(event.keyCode == 13){
+                search();
+            }
+        }
+
+        function search(){
+            $('#portfolio > div > div').filter(function() {
+                $(this).toggle($(this).text().toLowerCase()
+                    .indexOf($("#search-input")[0].value.toLowerCase()) > -1);
+            });
+
+            if($("#search-input")[0].value == ""){
+                $('#portfolio > h5').html('');
+            }
+            else{
+                $('#portfolio > h5').html('<a href="list(fetch).html">전체보기</a>');
+            }
+        }
+
+        function scrollMove() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function loadImage(){
+            fetch('list').then(function(response){
+                response.text().then(function(text){
+                    var items = text.split('<>');
+                    var imgs = [];
+                    for(var i = 0; i < items.length; i+=4){
+                        var img = new Image();
+                        img.className = "img";
+                        img.src = items[i].trim();
+                        img.index = i;
+                        img.onload = function(){//for문이 onload를 기다려주지 않는 것에 주의
+                            var divAspect = 0.5;
+                            var imgAspect = this.height / this.width;
+                            if (imgAspect <= divAspect) {
+                                this.className += " landscape";
+                            } else {
+                                this.className += " portrait";
+                            }
+                            imgs.push(this);
+                            if(imgs.length == (items.length/4)){
+                                console.log("all images loaded: "+imgs.length);
+                                createTag(imgs);
+                            }
+                        };
+                    }
+                })
+            });
+        }
+
+        function createTag(imgs){
+            fetch('list').then(function(response){
+                response.text().then(function(text){
+                    var items = text.split('<>');
+                    var tags = '';
+                    for(var i = 0; i < items.length; i+=4){
+                        var img;
+                        for(var j = 0; j < imgs.length; j++){
+                            if(imgs[j].index == i){
+                                img = imgs[j];
+                                break;
+                            }
+                        }   
+                        var tag = 
+                        '<div class="col-sm-4">'
+                            +'<a href="'+items[i+1].trim()+'">'
+                                +'<div class="thumbnail">'
+                                    +'<div class="wrapper">'
+                                        +'<div class="centered">'
+                                            +img.outerHTML
+                                        +'</div>'
+                                    +'</div>'
+                                    +'<p><strong>'+items[i+2].trim()+'</strong></p>'
+                                    +'<p>'+items[i+3].trim()+'</p>'
+                                +'</div>'
+                            +'</a>'
+                        +'</div>';
+                        tags += tag;
+                    }
+                    document.getElementById('list').innerHTML = tags;
+                })
+            });
+        }
+
+        window.onload = function(){
+            loadImage();
+        }
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="title-logo" src="../resource/index/YeoungHome-logo.png" alt="메인으로" height="100" width="300"></a>
+        <div id="search">
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요." onkeydown="searchEnter()">
+            <button type="button" id="search-btn" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </header>
+    <section>
+        <div id="portfolio" class="container-fluid text-center bg-grey">
+            <h2>__Portfolio__</h2><br>
+            <h5></h5><br><br>
+            <div id="list" class="row text-center slideanim">
+            </div>
+            
+            <div id="top" onclick="scrollMove()" style="cursor: pointer; width: fit-content; margin: auto; ">
+                <b>top</b>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

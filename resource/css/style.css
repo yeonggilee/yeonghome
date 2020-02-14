@@ -1,0 +1,254 @@
+/*공통*/
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: inline-flex;
+    z-index: 1000;
+}
+
+header > div{
+    display: inline-flex;
+}
+
+@media(max-width:767px){
+    #title-logo{
+        margin-top: 25px;
+        height: 60px;
+        width: 180px;
+    }
+}
+
+section {
+    padding-top: 100px;
+}
+
+/*index.html*/
+
+#back-img {
+    height: 800px;
+    width: 100%;
+
+    background-position: center;
+    background-image: url("../index/mainImg.jpg");
+    filter: brightness(50%);
+    
+    position: fixed;
+    z-index: -1;
+}
+
+#txt {
+    color: white;
+    width: 1500px;
+    margin: auto;
+}
+
+#title-txt {
+    padding: 250px;
+}
+
+#content-txt{
+    padding-top: 300px;
+    padding-bottom: 300px;
+
+    font-weight: bolder;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+#content-txt > p {
+    margin: auto;
+    margin-bottom: 60px;
+    
+    width: fit-content;
+    cursor: pointer;
+}
+
+#modal-body{
+    padding-top: 40px;
+    padding-left: 130px;
+}
+
+.profile-list{
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.profile-content{
+    padding-left: 100px;
+}
+
+#profile-img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*list.html*/
+
+#search {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#search-input {
+    height: 50px;
+    width: 50vw;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
+}
+
+#search-btn {
+    width: 80px;
+    height: 50px;
+    margin-left: -20px;
+
+    background-color: mediumslateblue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+#portfolio > div a, 
+#portfolio > div a:hover, 
+#portfolio > div a:focus {
+    color: black;
+    text-decoration: none;
+}
+
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 70px;
+    box-shadow: 5px 0px 10px rgba(0,0,0, .2);
+  }
+          
+  .thumbnail .wrapper {
+    position: relative;
+    padding-top: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .thumbnail .wrapper .centered  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    transform: translate(50%,50%);
+  }
+  
+  .thumbnail .wrapper .centered img {
+    /* position: absolute; top: 0; left: 0; */
+    /* max-width: 100%; height: auto; */
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  
+  .thumbnail .wrapper img.portrait {
+    width: 100%;
+    height: auto;
+  }
+  
+  .thumbnail .wrapper img.landscape {
+    width: auto;
+    height: 100%;
+  }
+
+.thumbnail:hover {
+    filter: brightness(70%);
+}
+
+.thumbnail p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+/*ex.html*/
+
+#nav {
+    margin-top: 30px; 
+    margin-left: 80px;
+}
+
+#nav > h2 {
+    margin-right: 30px;
+}
+
+#nav > h2:nth-child(odd) {
+    color: black;
+    cursor: pointer;
+}
+
+#nav > h2:nth-child(even) {
+    color: mediumslateblue;
+}
+
+.container {
+    background-color: white;
+    margin-top: 55px;
+    padding: 0  100px 0 100px;
+}
+
+.container > div{
+    padding-top: 300px;
+}
+
+.item{
+    height: 315px;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    margin: auto;
+    height: auto;
+    max-height: 100%;
+}
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: mediumslateblue;
+}
+
+.carousel-indicators li {
+    border-color: mediumslateblue;
+}
+
+.carousel-indicators li.active {
+    background-color: mediumslateblue;
+}
+
+@media(max-width:991px){
+    #video > iframe {
+        width: 100%;
+    }
+}
+
+@media(max-width:767px){
+    .item{
+        height: 40vw;
+    }
+}

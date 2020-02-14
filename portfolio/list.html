@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YeoungHome-portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../resource/css/style.css">
+    <script>
+        function searchEnter(){
+            if(event.keyCode == 13){
+                search();
+            }
+        }
+
+        function search(){
+            $('#portfolio > div > div').filter(function() {
+                $(this).toggle($(this).text().toLowerCase()
+                    .indexOf($("#search-input")[0].value.toLowerCase()) > -1);
+            });
+
+            if($("#search-input")[0].value == ""){
+                $('#portfolio > h5').html('');
+            }
+            else{
+                $('#portfolio > h5').html('<a href="list.html">전체보기</a>');
+            }
+        }
+
+        function scrollMove() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        window.onload = function(){
+        	//alert();
+			var imgs = document.getElementsByClassName("img");
+			var divAspect = 0.5; // div의 가로세로비
+			
+			for(var img of imgs){
+				var imgAspect = img.height / img.width;
+				 
+				if (imgAspect <= divAspect) {//납작한 경우
+					img.className += " landscape";//왜인지 모르겠지만 =으로 하면 홀수만 적용됨..
+				} else {//길죽한 경우
+					img.className += " portrait";
+				}
+				console.log(img.className);
+			}
+        }
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="title-logo" src="../resource/index/YeoungHome-logo.png" alt="메인으로" height="100" width="300"></a>
+        <div id="search">
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요." onkeydown="searchEnter()">
+            <button type="button" id="search-btn" onclick="search()"><span class="glyphicon glyphicon-search"></span></button>
+        </div>
+    </header>
+    <section>
+        <div id="portfolio" class="container-fluid text-center bg-grey">
+            <h2>__Portfolio__</h2><br>
+            <h5></h5><br><br>
+            <div class="row text-center slideanim">
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[HTML|CSS]커피소개 웹페이지</strong></p>
+                            <p>커피의 종류에 대해</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[C|OpenGL]컴퓨터 그래픽</strong></p>
+                            <p>다양한 각도에서 물체를 볼 수 있어요!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[C#|Unity]VR 방탈출게임</strong></p>
+                            <p>오큘러스로 즐기는 1인용 방탈출!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Java|DB]고객관리시스템</strong></p>
+                            <p>기본기능에 차트, 문서화까지!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Java|Socket]채팅프로그램</strong></p>
+                            <p>텍스트 스타일과 이모티콘, 내용불러오기까지~!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Java]빙고게임</strong></p>
+                            <p>간단한 빙고 맞추기~~</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Java|Socket]멀티오목게임</strong></p>
+                            <p>다양한 사람들과 함께 즐기는 오목게임!!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Javascript|JQuery]카드게임</strong></p>
+                            <p>카드 짝을 맞춰보세요~~</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[JSP]온라인 도서판매점</strong></p>
+                            <p>북쇼핑몰에서 책 구매해보기</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[JSP]중고차 매매 웹사이트</strong></p>
+                            <p>국내 회사 중고차 매매를 도와주는 사이트</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Spring|Ajax]게시판과 파일 업로드</strong></p>
+                            <p>간단한 게시판을 작성과 파일 업로드를 해보자~</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="content/ex.html">
+                        <div class="thumbnail">
+                            <div class="wrapper">
+                                <div class="centered">
+                                    <img class="img" src="../resource/index/mainImg.jpg">
+                                </div>
+                            </div>
+                            <p><strong>[Spring]상권 분석 웹사이트</strong></p>
+                            <p>강남 외식업 상권 분석해주는 사이트</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div id="top" onclick="scrollMove()" style="cursor: pointer; width: fit-content; margin: auto; ">
+                <b>top</b>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
