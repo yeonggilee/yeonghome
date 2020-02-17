@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../resource/css/style.css">
     <script>
         function scrollMove(id) {
-            $('html').animate({scrollTop : $(id).offset().top}, 400);
+            $('html').animate({scrollTop : $(id).offset().top - 200}, 400);
         }
 
         function loadContents() {
@@ -62,41 +62,47 @@
     </header>
     <section class="bg-grey">
         <div class="container">
-            <div id="summary" style="padding-top: 50px;">
-                <h1 id="title" style="text-align: center; padding-bottom: 100px;"></h1>
-                <h3>개요</h3>
-                <hr>
-                <div id="desc" style="line-height: 25px;">
-                </div>
-                <div id="sub" style="line-height: 30px;">
-                </div>
-            </div>
-            <div id="video" style="text-align: center;">
-            </div>
-            <hr>
-            <div id="image">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                    </ol>
-                        
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
+            <div class="content">
+                <div>
+                    <h1 id="title" style="text-align: center; padding-bottom: 100px;"></h1>
+                    <h3>개요</h3>
+                    <hr>
+                    <div id="desc" style="line-height: 25px;">
                     </div>
-                    
-                    <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div id="sub" style="line-height: 30px;">
+                    </div>
+                </div>
+                <div>
+                    <div id="video" style="text-align: center;">
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <div id="image">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                            </ol>
+                                
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                            </div>
+                            
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </div>
-            <hr>
-            <div style="text-align: center; padding-bottom: 100px;">- end of page -</div>
+            <div style="text-align: center;">- end of page -</div>
         </div>
     </section>
 </body>

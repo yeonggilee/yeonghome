@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="resource/css/style.css">
     <script>
         function scrollMove(id) {
-            $('html').animate({scrollTop : $(id).offset().top}, 400);
+            $('html').animate({scrollTop : $(id).offset().top - 130}, 400);
         }
         function scrollTop() {
             document.body.scrollTop = 0;
@@ -30,13 +30,10 @@
         <div id="back-img"></div>
         <div id="txt">
             <div id="title-txt">
-                <p style="font-size: 40px; text-align: left;">안녕하세요!</p>
-                <p style="font-size: 80px; text-align: center; font-weight: bolder;">프로그래밍 포트폴리오</p>
-                <p style="font-size: 40px; text-align: right;">홈페이지 입니다.</p>
-                <br>
-                <p style="font-size: 80px; text-align: center; font-weight: bolder;">
-                    <span class="glyphicon glyphicon-circle-arrow-down" onclick="scrollMove('#content-txt')" style="cursor: pointer;"></span>
-                </p>
+                <p>안녕하세요!</p>
+                <p>프로그래밍 포트폴리오</p>
+                <p>홈페이지 입니다.</p>
+                <p><span class="glyphicon glyphicon-circle-arrow-down" onclick="scrollMove('#content-txt')" style="cursor: pointer;"></span></p>
             </div>
             <div id="content-txt">
                 <p data-toggle="modal" data-target="#myModal" data-backdrop="static">프로필</p>
@@ -54,8 +51,8 @@
                         <h4 class="modal-title">프로필</h4>
                     </div>
                     <div class="modal-body">
-                        <div id="modal-body">
-                            <p class="profile-content"><img id="profile-img" src="resource/index/profile.jpg" alt="프로필사진" height="120" width="120"></p>
+                        <div id="profile">
+                            <p id="profile-img"><img src="resource/index/profile.jpg"></p>
                             <br>
                             <p class="profile-list">성명</p>
                             <p class="profile-content">이영기</p><br>

@@ -21,8 +21,8 @@ header > div{
 @media(max-width:767px){
     #title-logo{
         margin-top: 25px;
-        height: 60px;
-        width: 180px;
+        height: 50px;
+        width: 150px;
     }
 }
 
@@ -33,7 +33,7 @@ section {
 /*index.html*/
 
 #back-img {
-    height: 800px;
+    height: 100%;
     width: 100%;
 
     background-position: center;
@@ -46,34 +46,66 @@ section {
 
 #txt {
     color: white;
-    width: 1500px;
+    width: 1000px;
     margin: auto;
+    padding: 100px 10px;
 }
 
 #title-txt {
-    padding: 250px;
+    padding-bottom: 500px;
+}
+
+#title-txt > p:nth-child(1){
+    font-size: 40px; 
+    text-align: left;
+}
+
+#title-txt > p:nth-child(2){
+    font-size: 80px; 
+    text-align: center; 
+    font-weight: bolder;
+}
+
+#title-txt > p:nth-child(3){
+    font-size: 40px; 
+    text-align: right;
+}
+
+#title-txt > p:nth-child(4){
+    padding-top: 50px;
+    font-size: 80px; 
+    text-align: center; 
+    font-weight: bolder;
 }
 
 #content-txt{
-    padding-top: 300px;
-    padding-bottom: 300px;
-
     font-weight: bolder;
     font-size: 40px;
     text-decoration: underline;
 }
 
 #content-txt > p {
+    width: fit-content;
     margin: auto;
     margin-bottom: 60px;
-    
-    width: fit-content;
     cursor: pointer;
 }
 
-#modal-body{
+#profile{
     padding-top: 40px;
-    padding-left: 130px;
+    width: fit-content;
+    margin: auto;
+}
+
+#profile-img {
+    text-align: center;
+}
+
+#profile-img > img{
+    object-fit: cover;
+    border-radius: 50%; 
+    height: 120px;
+    width: 120px;
 }
 
 .profile-list{
@@ -85,22 +117,23 @@ section {
     padding-left: 100px;
 }
 
-#profile-img{
-    object-fit: cover;
-    border-radius: 50%;
+@media(max-width:767px){
+    #txt{
+        width: 450px;
+    }
 }
 
 /*list.html*/
 
 #search {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 30px;
     margin-left: 30px;
 }
 
 #search-input {
     height: 50px;
-    width: 50vw;
+    width: 40vw;
 
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -187,6 +220,12 @@ section {
     text-overflow: ellipsis; 
 }
 
+#top {
+    cursor: pointer; 
+    width: fit-content; 
+    margin: auto;
+}
+
 /*ex.html*/
 
 #nav {
@@ -209,12 +248,12 @@ section {
 
 .container {
     background-color: white;
-    margin-top: 55px;
-    padding: 0  100px 0 100px;
+    margin-top: 50px;
+    padding: 50px 100px;
 }
 
-.container > div{
-    padding-top: 300px;
+.container .content > div{
+    padding-bottom: 250px;
 }
 
 .item{
@@ -250,5 +289,15 @@ section {
 @media(max-width:767px){
     .item{
         height: 40vw;
+    }
+    .container{
+        padding: 50px 50px;
+    }
+    #nav {
+        margin-left: 40px;
+    }
+    #nav > h2 {
+        font-size: 20px;
+        margin-right: 10px;
     }
 }
