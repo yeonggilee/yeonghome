@@ -38,6 +38,8 @@ section {
 
     background-position: center;
     background-image: url("../index/mainImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     filter: brightness(50%);
     
     position: fixed;
