@@ -9,6 +9,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../resource/css/style.css">
+    <script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
+    <script src=https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/url-search-params/1.1.0/url-search-params.js></script>
     <script>
         function scrollMove(id) {
             $('html').animate({scrollTop : $(id).offset().top - 200}, 400);
@@ -63,44 +66,42 @@
     <section class="bg-grey">
         <div class="container">
             <div class="content">
-                <div>
-                    <h1 id="title" style="text-align: center; padding-bottom: 100px;"></h1>
-                    <h3>개요</h3>
-                    <hr>
-                    <div id="desc" style="line-height: 25px;">
-                    </div>
-                    <div id="sub" style="line-height: 30px;">
-                    </div>
+                <h1 id="title" style="text-align: center; padding-bottom: 100px;"></h1>
+                <h3>개요</h3>
+                <hr>
+                <div id="desc" style="line-height: 25px;">
                 </div>
-                <div>
-                    <div id="video" style="text-align: center;">
-                    </div>
-                    <hr>
+                <div id="sub" style="line-height: 30px;">
                 </div>
-                <div>
-                    <div id="image">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                            </ol>
-                                
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner" role="listbox">
-                            </div>
+            </div>
+            <div class="content">
+                <div id="video" style="text-align: center;">
+                </div>
+                <hr>
+            </div>
+            <div class="content">
+                <div id="image">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                        </ol>
                             
-                            <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
                         </div>
+                        
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <hr>
                 </div>
+                <hr>
             </div>
             <div style="text-align: center;">- end of page -</div>
         </div>

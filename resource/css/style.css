@@ -31,6 +31,16 @@ section {
 }
 
 /*index.html*/
+#back-img:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content:"";
+    background: hsla(0, 0%, 0%, 0.5);/*adjust brightness here */  
+}
 
 #back-img {
     height: 100%;
@@ -40,7 +50,7 @@ section {
     background-image: url("../index/mainImg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(50%);
+    /* filter: brightness(50%); */
     
     position: fixed;
     z-index: -1;
@@ -51,6 +61,8 @@ section {
     width: 800px;
     margin: auto;
     padding: 100px 10px;
+    text-align: center; 
+    font-size: 30px; 
 }
 
 #title-txt {
@@ -58,57 +70,71 @@ section {
 }
 
 #title-txt > p:nth-child(1){
-    font-size: 30px; 
     text-align: left;
 }
 
 #title-txt > p:nth-child(2){
     font-size: 60px; 
-    text-align: center; 
     font-weight: bolder;
 }
 
 #title-txt > p:nth-child(3){
-    font-size: 30px; 
     text-align: right;
 }
 
 #title-txt > p:nth-child(4){
     padding-top: 50px;
-    font-size: 60px; 
-    text-align: center; 
+    font-size: 60px;
     font-weight: bolder;
 }
 
 #content-txt{
     font-weight: bolder;
-    font-size: 30px;
     text-decoration: underline;
 }
 
-#content-txt > p {
-    width: fit-content;
-    margin: auto;
-    margin-bottom: 60px;
+#content-txt > p{
+    padding-bottom: 50px;
+}
+
+#content-txt > p > span{
     cursor: pointer;
 }
 
 #profile{
     padding-top: 40px;
-    width: fit-content;
+    display: table;/* width: fit-content; */
     margin: auto;
 }
 
-#profile-img {
+.profile-img {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+    
+.profile-img > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 100%;
+}
+/* 
+.profile-img {
     text-align: center;
 }
 
-#profile-img > img{
-    object-fit: cover;
-    border-radius: 50%; 
+.profile-img > img{
     height: 120px;
     width: 120px;
-}
+    object-fit: cover;
+    border-radius: 50%; 
+} */
 
 .profile-list{
     text-decoration: underline;
@@ -269,7 +295,7 @@ section {
     padding: 50px 100px;
 }
 
-.container .content > div{
+.content{
     padding-bottom: 250px;
 }
 
