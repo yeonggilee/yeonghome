@@ -10,9 +10,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../resource/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js"></script> -->
     <script>
+        function checkIE(){
+            var agent = navigator.userAgent.toLowerCase();
+            if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) 
+            || (agent.indexOf("msie") != -1) ) {
+                alert("인터넷 익스플로러에서는 지원하지 않습니다.\n다른 브라우저로 열어주세요!");
+                document.execCommand('Stop');
+                history.go(-1);
+            }
+        }
+        checkIE();
+        
         function searchEnter(){
             if(event.keyCode == 13){
                 search();
@@ -34,8 +45,7 @@
         }
 
         function scrollMove() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            window.scrollTo({top: 0, behavior: "smooth"});
         }
 
         function loadImage(){

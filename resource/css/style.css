@@ -31,16 +31,6 @@ section {
 }
 
 /*index.html*/
-#back-img:before {
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content:"";
-    background: hsla(0, 0%, 0%, 0.5);/*adjust brightness here */  
-}
 
 #back-img {
     height: 100%;
@@ -50,7 +40,7 @@ section {
     background-image: url("../index/mainImg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    /* filter: brightness(50%); */
+    filter: brightness(50%);
     
     position: fixed;
     z-index: -1;
@@ -106,27 +96,10 @@ section {
     display: table;/* width: fit-content; */
     margin: auto;
 }
-
-.profile-img {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    border-radius: 50%;
-    overflow: hidden;
-}
-    
-.profile-img > img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
-    width: 100%;
-}
-/* 
+ 
 .profile-img {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .profile-img > img{
@@ -134,7 +107,7 @@ section {
     width: 120px;
     object-fit: cover;
     border-radius: 50%; 
-} */
+}
 
 .profile-list{
     text-decoration: underline;
@@ -142,7 +115,7 @@ section {
 }
 
 .profile-content{
-    padding-left: 100px;
+    padding: 0 0 20px 100px;
 }
 
 @media(max-width:767px){

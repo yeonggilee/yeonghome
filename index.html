@@ -12,12 +12,22 @@
     <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
     <link rel="stylesheet" href="resource/css/style.css">
     <script>
-        function scrollMove(id) {
-            $('html').animate({scrollTop : $(id).offset().top - 130}, 400);
+        function checkIE(){
+            var agent = navigator.userAgent.toLowerCase();
+            if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) 
+            || (agent.indexOf("msie") != -1) ) {
+                alert("인터넷 익스플로러에서는 지원하지 않습니다.\n다른 브라우저로 열어주세요!");
+                document.execCommand('Stop');
+                history.go(-1);
+            }
         }
-        function scrollTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+        checkIE();
+
+        function scrollMove(id) {
+            $('html').animate({scrollTop : $('#'+id).offset().top - 130}, 400);
+            //for edge
+            var pos = document.getElementById(id).offsetTop - 130;
+            window.scrollTo(0, pos);
         }
     </script>
 </head>
@@ -33,7 +43,7 @@
                 <p>안녕하세요!</p>
                 <p>프로그래밍 포트폴리오</p>
                 <p>홈페이지 입니다.</p>
-                <p><span class="glyphicon glyphicon-circle-arrow-down" onclick="scrollMove('#content-txt')" style="cursor: pointer;"></span></p>
+                <p><span class="glyphicon glyphicon-circle-arrow-down" onclick="scrollMove('content-txt')" style="cursor: pointer;"></span></p>
             </div>
             <div id="content-txt">
                 <p><span data-toggle="modal" data-target="#myModal" data-backdrop="static">프로필</span></p>
@@ -52,20 +62,19 @@
                     </div>
                     <div class="modal-body">
                         <div id="profile">
-                            <div class="profile-img"><img src="resource/index/profile.jpg"></div>
-                            <br>
+                            <p class="profile-img"><img src="resource/index/profile.jpg"></p>
                             <p class="profile-list">성명</p>
-                            <p class="profile-content">이영기</p><br>
+                            <p class="profile-content">이영기</p>
                             <p class="profile-list">생년월일</p>
-                            <p class="profile-content">1996.12.16</p><br>
+                            <p class="profile-content">1996.12.16</p>
                             <p class="profile-list">이메일</p>
-                            <p class="profile-content">l0g@naver.com</p><br>
+                            <p class="profile-content">l0g@naver.com</p>
                             <p class="profile-list">최종학력</p>
-                            <p class="profile-content">한성대학교</p><br>
+                            <p class="profile-content">한성대학교</p>
                             <p class="profile-list">전공</p>
-                            <p class="profile-content">지식정보학부, 컴퓨터공학과</p><br>
+                            <p class="profile-content">지식정보학부, 컴퓨터공학과</p>
                             <p class="profile-list">자격증</p>
-                            <p class="profile-content">정보처리기사</p><br>
+                            <p class="profile-content">정보처리기사</p>
                         </div>
                     </div>
                     <div class="modal-footer">
