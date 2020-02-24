@@ -69,6 +69,7 @@
                             imgs.push(this);
                             if(imgs.length == (items.length/4)){
                                 console.log("all images loaded: "+imgs.length);
+                                document.getElementById('loading').style.display = "none";
                                 createTag(imgs);
                             }
                         };
@@ -129,10 +130,12 @@
     <section>
         <div id="portfolio" class="container-fluid text-center bg-grey">
             <h2>__Portfolio__</h2><br>
+            <div id="loading">
+                <img src="../resource/index/loading.gif"/>
+            </div>
             <h5></h5><br><br>
             <div id="list" class="row text-center slideanim">
             </div>
-            
             <div id="top" onclick="scrollMove()">
                 <b>top</b>
             </div>

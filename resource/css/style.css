@@ -227,6 +227,11 @@ section {
     margin: auto;
 }
 
+#loading {
+    margin: auto;
+    background: #f6f6f6;
+}
+
 @media(max-width:767px){
     #search-input {
         width: calc(100vw - 290px);
