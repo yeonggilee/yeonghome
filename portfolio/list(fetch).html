@@ -48,56 +48,19 @@
             window.scrollTo({top: 0, behavior: "smooth"});
         }
 
-        function loadImage(){
-            fetch('list').then(function(response){
-                response.text().then(function(text){
-                    var items = text.split('<>');
-                    var imgs = [];
-                    for(var i = 0; i < items.length; i+=4){
-                        var img = new Image();
-                        img.className = "img";
-                        img.src = items[i].trim();
-                        img.index = i;
-                        img.onload = function(){//for문이 onload를 기다려주지 않는 것에 주의
-                            var divAspect = 0.5;
-                            var imgAspect = this.height / this.width;
-                            if (imgAspect <= divAspect) {
-                                this.className += " landscape";
-                            } else {
-                                this.className += " portrait";
-                            }
-                            imgs.push(this);
-                            if(imgs.length == (items.length/4)){
-                                console.log("all images loaded: "+imgs.length);
-                                document.getElementById('loading').style.display = "none";
-                                createTag(imgs);
-                            }
-                        };
-                    }
-                })
-            });
-        }
-
-        function createTag(imgs){
+        function createList(){
             fetch('list').then(function(response){
                 response.text().then(function(text){
                     var items = text.split('<>');
                     var tags = '';
                     for(var i = 0; i < items.length; i+=4){
-                        var img;
-                        for(var j = 0; j < imgs.length; j++){
-                            if(imgs[j].index == i){
-                                img = imgs[j];
-                                break;
-                            }
-                        }   
                         var tag = 
                         '<div class="col-sm-4">'
                             +'<a href="'+items[i+1].trim()+'">'
                                 +'<div class="thumbnail">'
                                     +'<div class="wrapper">'
                                         +'<div class="centered">'
-                                            +img.outerHTML
+                                            +'<img src="'+items[i].trim()+'">'
                                         +'</div>'
                                     +'</div>'
                                     +'<p><strong>'+items[i+2].trim()+'</strong></p>'
@@ -113,7 +76,7 @@
         }
 
         window.onload = function(){
-            loadImage();
+            createList();
         }
         
     </script>
@@ -130,9 +93,6 @@
     <section>
         <div id="portfolio" class="container-fluid text-center bg-grey">
             <h2>__Portfolio__</h2><br>
-            <div id="loading">
-                <img src="../resource/index/loading.gif"/>
-            </div>
             <h5></h5><br><br>
             <div id="list" class="row text-center slideanim">
             </div>
