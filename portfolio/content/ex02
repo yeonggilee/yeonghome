@@ -1,6 +1,6 @@
 컴퓨터 그래픽스
 <>
-C#/OpenGL로 제작한 CG(Computer Graphics) 입니다. <br>
+C/OpenGL로 제작한 CG(Computer Graphics) 입니다. <br>
 2018년 '컴퓨터 그래픽스'수업에서 과제로 만들었습니다. <br>
 glut, glu를 이용해 움직이는 물체들을 생성하고 여러 각도에서 관찰할 수 있는 카메라 기능을 넣었습니다.
 <>
